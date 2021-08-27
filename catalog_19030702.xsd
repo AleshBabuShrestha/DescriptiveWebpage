@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="MusicStore"> <!-- Creating a schema for the root element. -->
+		<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+			<xs:sequence>
+				<xs:element name="Logo"> <!-- Creating a schema for Logo element. -->
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="0"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="StoreName"> <!-- Creating a schema for StoreName element. -->
+					<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+						<xs:simpleContent> <!-- As StoreName has both an attribute and a value, simpleContent for it is designed. -->
+							<xs:extension base="xs:string"> <!-- Creating the base variable for the StoreName value. -->
+								<xs:attribute name="StoreID" type="xs:ID" use="required" /> <!-- Creating StoreID attribute for StoreName element. -->
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TelephoneNo" minOccurs="1" maxOccurs="unbounded"> <!-- Creating a schema and setting an unbounded range for TelephoneNo. -->
+					<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+						<xs:simpleContent> <!-- As TelephoneNo has both an attribute and a value, simpleContent for it is designed. -->
+							<xs:extension base="xs:integer"> <!-- Creating the base variable for the TelephoneNo value. -->
+								<xs:attribute name="Type" type="xs:string" use="required" /> <!-- Creating Type attribute for TelephoneNo element. -->
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Address" type="xs:string" /> <!-- Creating a schema for Address element. -->
+				<xs:element name="Website" type="xs:string" /> <!-- Creating a schema for Website element. -->
+				<xs:element name="Albums"> <!-- Creating a schema for Albums element. -->
+					<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+						<xs:sequence>
+							<xs:element name="Album" minOccurs="1" maxOccurs="unbounded"> <!-- Creating a schema and setting an unbounded range for Album. -->
+								<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+									<xs:sequence>
+										<xs:element name="AlbumName" type="xs:string" /> <!-- Creating a schema for AlbumName element. -->
+										<xs:element name="AlbumArt"> <!-- Creating a schema for AlbumArt element. -->
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:length value="0"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Artist" type="xs:string" /> <!-- Creating a schema for Artist element. -->
+										<xs:element name="RecordLabel" type="xs:string" minOccurs="0" /> <!-- Creating an optional schema for RecordLabel. -->
+										<xs:element name="Songs"> <!-- Creating a schema for Songs element. -->
+											<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+												<xs:sequence>
+													<xs:element name="Song" minOccurs="1" maxOccurs="unbounded"> <!-- Creating a schema and setting an unbounded range for Song. -->
+														<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+															<xs:sequence>
+																<xs:element name="SongName" type="xs:string" /> <!-- Creating a schema for SongName element. -->
+																<xs:element name="Genre" type="xs:string" /> <!-- Creating a schema for Genre element. -->
+																<xs:element name="ProducerName" type="xs:string" /> <!-- Creating a schema for ProducerName element. -->
+																<xs:element name="SongWriter" type="xs:string" /> <!-- Creating a schema for SongWriter element. -->
+																<xs:element name="FeaturedArtist" type="xs:string" minOccurs="0" /> <!-- Creating an optional schema for FeaturedArtist. -->
+																<xs:element name="SongPrice" type="xs:string" /> <!-- Creating a schema for SongPrice element. -->
+																<xs:element name="BorrowPriceRate" type="xs:string" minOccurs="0" /> <!-- Creating an optional schema for BorrowPriceRate. -->
+																<xs:element name="ReleaseDate"> <!-- Creating a schema for ReleaseDate element. -->
+																	<xs:complexType> <!-- Creating a complexType schema because multiple elements exist within the parent element. -->
+																		<xs:sequence>
+																			<xs:element name="Day" type="xs:integer" minOccurs="0" /> <!-- Creating an optional schema for Day. -->
+																			<xs:element name="Month" type="xs:string" minOccurs="0" /> <!-- Creating an optional schema for Month. -->
+																			<xs:element name="Year" type="xs:integer" /> <!-- Creating a schema for Year element. -->
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="SongID" type="xs:ID" use="required" /> <!-- Creating SongID attribute for Song element. -->
+															<xs:attribute name="Borrowable" type="xs:string" use="required" /> <!-- Creating Borrowable attribute for Song element. -->
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>	
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="AlbumID" type="xs:ID" use="required" /> <!-- Creating AlbumID attribute for Album element. -->
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

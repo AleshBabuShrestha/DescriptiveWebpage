@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="catalog_19030702.css"?>  <!-- Referencing the CSS file.-->
+<!-- <!DOCTYPE MusicStore SYSTEM "catalog_19030702.dtd"> --> <!-- Referencing the DTD file. -->
+<MusicStore xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"  
+			xs:noNamespaceSchemaLocation="catalog_19030702.xsd"> <!-- Creating Root element and referencing the Schema file. -->
+	<Logo></Logo>
+	<StoreName StoreID="BT1213">Bass &#38; Treble Nepal</StoreName> 
+	<TelephoneNo Type="Landline">4425932</TelephoneNo>
+	<TelephoneNo Type="Mobile">9841000212</TelephoneNo>
+	<Address>Naxal, Kathmandu</Address>
+	<Website>https://bassandtreble.shop/</Website>
+	<Albums> <!-- Creating a parent element to list multiple albums. -->
+		<Album AlbumID="AN1212"> <!-- Creating a child element for individual albums. -->
+			<AlbumName>Feeding Seahorses By Hand</AlbumName>
+			<AlbumArt></AlbumArt>
+			<Artist>Billie Marten</Artist>
+			<RecordLabel>RCA</RecordLabel>
+			<Songs><!-- Creating a parent element to list multiple songs. -->
+				<Song SongID="SN444" Borrowable="YES"> <!-- Creating a child element for individual songs. -->
+					<SongName>Cartoon People</SongName>
+					<Genre>Pop</Genre>
+					<ProducerName>Ethan Johns</ProducerName>
+					<SongWriter>John Congleton</SongWriter>
+					<!-- FeaturedArtist missing because it is an optional element. -->
+					<SongPrice>13.99</SongPrice>
+					<BorrowPriceRate>2.75</BorrowPriceRate> <!-- As Borrowable="YES" BorrowPriceRate exists. -->
+					<ReleaseDate>
+						<Day>5</Day>
+						<Month>April</Month>
+						<Year>2019</Year>
+					</ReleaseDate>
+				</Song>
+				<Song SongID="SN555" Borrowable="YES">
+					<SongName>Toulouse</SongName>
+					<Genre>Folk</Genre>
+					<ProducerName>Ethan Johns</ProducerName>
+					<SongWriter>Billie Marten</SongWriter>
+					<SongPrice>12.56</SongPrice>
+					<BorrowPriceRate>2.05</BorrowPriceRate>
+					<ReleaseDate>
+						<Day>26</Day>
+						<Month>April</Month>
+						<Year>2019</Year>
+					</ReleaseDate>
+				</Song>
+			</Songs>
+		</Album>
+		<Album AlbumID="AN6969">
+			<AlbumName>Pink Season</AlbumName>
+			<AlbumArt></AlbumArt>
+			<Artist>Pink Guy</Artist>
+			<!-- RecordLabel missing because it is an optional element. -->
+			<Songs>
+				<Song SongID="SN666" Borrowable="NO">
+					<SongName>I Have a Gun</SongName>
+					<Genre>Trap</Genre>
+					<ProducerName>PolitikZ</ProducerName>
+					<SongWriter>George Miller</SongWriter>
+					<FeaturedArtist>PolitikZ</FeaturedArtist>
+					<SongPrice>60</SongPrice>
+					<!-- As Borrowable="NO" BorrowPriceRate does not exist. -->
+					<ReleaseDate>
+						<Day>4</Day>
+						<Month>January</Month>
+						<Year>2017</Year>
+					</ReleaseDate>
+				</Song>
+				<Song SongID="SN777" Borrowable="YES">
+					<SongName>Fried Noodles</SongName>
+					<Genre>Comedy HipHop</Genre>
+					<ProducerName>Pink Guy</ProducerName>
+					<SongWriter>Pink Guy</SongWriter>
+					<SongPrice>25</SongPrice>
+					<BorrowPriceRate>2.5</BorrowPriceRate>
+					<ReleaseDate>
+						<!-- Day missing because it is an optional element. -->
+						<Month>May</Month>
+						<Year>2016</Year>
+					</ReleaseDate>
+				</Song>
+			</Songs>
+		</Album>
+		<Album AlbumID="AN1111">
+			<AlbumName>Cherish</AlbumName>
+			<AlbumArt></AlbumArt>
+			<Artist>slipfunc</Artist>
+			<Songs>
+				<Song SongID="SN888" Borrowable="NO">
+					<SongName>Under Your Spell</SongName>
+					<Genre>Hip-Hop</Genre>
+					<ProducerName>Paul slipfunc Niemi</ProducerName>
+					<SongWriter>Paul slipfunc Niemi</SongWriter>
+					<SongPrice>33</SongPrice>
+					<ReleaseDate>
+						<Month>February</Month>
+						<Year>2019</Year>
+					</ReleaseDate>
+				</Song>
+				<Song SongID="SN999" Borrowable="YES">
+					<SongName>Until Dawn</SongName>
+					<Genre>Hip-Hop</Genre>
+					<ProducerName>Paul slipfunc Niemi</ProducerName>
+					<SongWriter>Paul slipfunc Niemi</SongWriter>
+					<SongPrice>24</SongPrice>
+					<BorrowPriceRate>2.04</BorrowPriceRate>
+					<ReleaseDate>
+						<!-- Day and Month missing because it is an optional element. -->
+						<Year>2019</Year>
+					</ReleaseDate>
+				</Song>
+			</Songs>
+		</Album>
+	</Albums>
+</MusicStore>

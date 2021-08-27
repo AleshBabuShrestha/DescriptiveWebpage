@@ -1,0 +1,33 @@
+<!-- Creating DTD for all the elements within catalog_19030702.xml file. -->
+<!ELEMENT MusicStore (Logo, StoreName, TelephoneNo+, Address, Website, Albums)>
+<!ELEMENT Logo EMPTY>
+<!ELEMENT StoreName (#PCDATA)>
+<!ELEMENT TelephoneNo (#PCDATA)>
+<!ELEMENT Address (#PCDATA)>
+<!ELEMENT Website (#PCDATA)>
+<!ELEMENT Albums (Album+)>
+<!ELEMENT Album (AlbumName, AlbumArt, Artist, RecordLabel?, Songs)>
+<!ELEMENT AlbumName (#PCDATA)>
+<!ELEMENT AlbumArt EMPTY>
+<!ELEMENT Artist (#PCDATA)>
+<!ELEMENT RecordLabel (#PCDATA)>
+<!ELEMENT Songs (Song+)>
+<!ELEMENT Song (SongName, Genre, ProducerName, SongWriter, FeaturedArtist?, SongPrice, BorrowPriceRate?, ReleaseDate)>
+<!ELEMENT SongName (#PCDATA)>
+<!ELEMENT Genre (#PCDATA)>
+<!ELEMENT ProducerName (#PCDATA)>
+<!ELEMENT SongWriter (#PCDATA)>
+<!ELEMENT FeaturedArtist (#PCDATA)>
+<!ELEMENT SongPrice (#PCDATA)>
+<!ELEMENT BorrowPriceRate (#PCDATA)>
+<!ELEMENT ReleaseDate (Day?, Month?, Year)>
+<!ELEMENT Day (#PCDATA)>
+<!ELEMENT Month (#PCDATA)>
+<!ELEMENT Year (#PCDATA)>
+
+<!-- Creating DTD for all the attributes within catalog_19030702.xml file. -->
+<!ATTLIST StoreName StoreID ID #REQUIRED>
+<!ATTLIST TelephoneNo Type (Landline|Mobile) "Landline">
+<!ATTLIST Album AlbumID ID #REQUIRED>
+<!ATTLIST Song SongID ID #REQUIRED>
+<!ATTLIST Song Borrowable (YES|NO) "NO">
